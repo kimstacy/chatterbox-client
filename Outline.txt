@@ -1,0 +1,72 @@
+💡 Instructions 💡
+
+🔘 Allow users to create rooms + enter existing rooms
+ - Rooms are defined by the .roomname property of messages, so you'll need to filter them somehow.
+
+🔘 Display messages retrieved from parse server
+🔘 Use proper escaping on any user input
+🔘 Allow users to save new chat messages to the server ✅
+
+Additional Tasks:
+🔘 Refresh the displayed messages (either automatically or with a button)
+_____________
+
+📌 Current Tasks:
+🔘 Display all rooms from server
+🔘 Add new room to server
+🔘 Add friend upon clicking username
+🔘 Display all messages sent by friends in bold or with highlight
+
+
+💠 MODELS - functionality (where data lives)
+
+🔸 Messages
+   -
+
+🔸 Rooms
+   -
+
+
+💠 VIEWS - user interface (anything that's rendered on the screen)
+
+🔸 FormView
+    - initializes after handle is submitted
+    - submits a message to the server
+    - methods used:
+      * Parse.create (posts message to the server)
+      * MessagesView.renderMessage (appends message to ___)
+
+🔸 MessagesView - Renders Messages
+    - renders each message to the DOM
+    - methods used:
+      * MessageView.render (adds message to message HTML template)
+
+🔸 MessageView
+    - creates message template in HTML
+
+🔸 RoomsView
+    - populates the dropdown
+    - rerenders messages to chats element
+    * initialize
+    * render
+    * renderRoom
+    * addRoom: append room to the select element in DOM
+    * change rooms
+
+
+💠 C - CONTROLLER
+
+🔸  App
+  * initialize
+  * fetch
+      - Parse.readAll
+      - Iterate through data.results + filter through all received data to get roomnames
+  * startSpinner
+  * stopSpinner
+
+
+🔸 Parse
+  - this is how we interact with data and view
+    * create: Saves a message to the server
+    * readAll: Gets messages from the server
+

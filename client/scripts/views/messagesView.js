@@ -6,9 +6,14 @@ var MessagesView = {
   $submit: $('.submit'),
 
   initialize: function() {
+    // MessagesView.$submit.on('submit click', function() {
+    //   // MessagesView.add();
+    // });
 
     MessagesView.$chats.empty();
   },
+
+  /* --- ADD MESSAGES TO THE DOM --- */
 
   render: function(messages) {
     // call renderMessage on each message object in the messages array
@@ -19,7 +24,12 @@ var MessagesView = {
 
   renderMessage: function(message) {
   // prepend each rendered message to chats i
-    MessagesView.$chats.prepend(MessageView.render(message));
+    MessagesView.$chats.append(MessageView.render(message));
   }
 
+  // sanitize messages
+
 };
+
+
+
