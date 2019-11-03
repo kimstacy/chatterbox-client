@@ -54,7 +54,7 @@ _____________
     * change rooms
 
 
-💠 C - CONTROLLER
+💠 CONTROLLER - provides model data to view
 
 🔸  App
   * initialize
